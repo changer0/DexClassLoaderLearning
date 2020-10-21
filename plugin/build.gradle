@@ -29,17 +29,20 @@ android {
                 def fileName = "plugin.apk"
                 outputFileName = fileName
             }
-            println output.outputFile
-            //给宿主自动生成 apk 放到 assets 文件夹
-            def fromFile = "./build/outputs/apk/debug/plugin.apk"
-            def intoFile = "../host/src/main/assets"
-           copy {
-                from fromFile
-                into intoFile
-            }
-            println "fromFile: $fromFile"
-            println "intoFile: $intoFile"
         }
+    }
+
+    build.doLast {
+        println "build.doLast"
+        //给宿主自动生成 apk 放到 assets 文件夹
+        def fromFile = "./build/outputs/apk/debug/plugin.apk"
+        def intoFile = "../host/src/main/assets"
+        copy {
+            from fromFile
+            into intoFile
+        }
+        println "fromFile: $fromFile"
+        println "intoFile: $intoFile"
     }
 
 }

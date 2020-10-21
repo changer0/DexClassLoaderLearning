@@ -14,7 +14,7 @@ public class PluginClazz {
     }
     
     public void invoke(String arg) {
-        Log.i(TAG, "插件 invoke 方法执行，参数：" + arg);
+        Log.i(TAG, "new 插件 invoke 方法执行，参数：" + arg);
     }
 
 }
