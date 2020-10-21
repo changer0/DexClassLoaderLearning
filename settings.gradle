@@ -1,0 +1,3 @@
+include ':host'
+include ':plugin'
+rootProject.name = "DexClassLoaderLearning"
